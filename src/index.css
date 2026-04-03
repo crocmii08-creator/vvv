@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-bg-main: #0a0b0d;
+  --color-bg-card: #12141a;
+  --color-bg-sidebar: #0d0f14;
+  --color-border-subtle: rgba(255, 255, 255, 0.05);
+  --color-border-active: rgba(255, 255, 255, 0.1);
+  
+  --color-aura-primary: #00f2ff;
+  --color-aura-secondary: #7000ff;
+  --color-aura-success: #00ff9d;
+  --color-aura-warning: #ffb800;
+  --color-aura-danger: #ff4b4b;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-main text-slate-300 antialiased selection:bg-aura-primary/20 selection:text-aura-primary;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-bg-card border border-border-subtle rounded-xl shadow-2xl;
+  }
+  
+  .tech-grid {
+    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.03) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+
+  .grid-cols-24 {
+    grid-template-columns: repeat(24, minmax(0, 1fr));
+  }
+}
